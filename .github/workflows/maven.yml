@@ -30,9 +30,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      run: mkdir staging && cp target/*.jar staging
       
     - name: artifact upload
-      run: echo hello > world.txt
     - uses: actions/upload-artifact@v3
       with:
-        path: world.txt
+        path: staging
