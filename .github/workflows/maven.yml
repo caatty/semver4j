@@ -32,7 +32,7 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: artifact upload
-    - run: echo hello > world.txt
+      run: echo hello > world.txt
     - uses: actions/upload-artifact@v3
       with:
         path: world.txt
